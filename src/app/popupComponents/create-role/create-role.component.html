@@ -1,0 +1,26 @@
+<div class="addRolePopup">
+    <div class="popup-title">{{roleForm?.value?.id ? 'Edit' : 'Add'}} Role</div>
+    <div fxLayout="column" [formGroup]="roleForm">
+        <div fxFlex="100">
+            <mat-form-field class="example-full-width">
+                <mat-label>Role</mat-label>
+                <input matInput placeholder="Role" formControlName="role">
+                <mat-error *ngIf="roleForm.get('role').touched && roleForm.get('role')?.errors?.required">
+                    Role is required.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Role Description..." formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+        <div fxFlex="100" class="cols align-right">
+            <span class="mr20">
+                <button mat-raised-button (click)="closePopup()">Cancel</button>
+            </span>
+            <span><button mat-raised-button color="primary" (click)="onSave()">{{roleForm?.value?.id ? 'Update' : 'Add'}}</button></span>
+        </div>
+    </div>
+</div>

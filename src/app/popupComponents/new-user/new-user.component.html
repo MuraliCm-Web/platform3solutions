@@ -1,0 +1,118 @@
+<div class="newUserPopup">
+    <div class="popup-title">{{userForm?.value?.id ? 'Edit' : 'Add'}} User</div>
+    <div [formGroup]="userForm">
+        <div fxLayout="row" fxLayout.xs="column" class="form-page">
+            <div fxFlex="50" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Name" formControlName="name">
+                    <mat-error *ngIf="userForm.get('name').touched && userForm.get('name')?.errors?.required">
+                        Name is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="20" class="cols">
+                <mat-label>Gender</mat-label><br>
+                <mat-radio-group formControlName="gender">
+                    <mat-radio-button value="Male" color="primary">Male</mat-radio-button>
+                    <mat-radio-button value="Female" color="primary">Female</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div fxFlex="30" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Emp. ID</mat-label>
+                    <input matInput placeholder="Emp. ID" formControlName="empId">
+                    <mat-error *ngIf="userForm.get('empId').touched && userForm.get('empId')?.errors?.required">
+                        Employee ID is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email </mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="userForm.get('email').touched">
+                        <span *ngIf="userForm.get('email')?.errors?.required">Email is required.</span>
+                        <span *ngIf="userForm.get('email')?.errors?.email">touched Email ID.</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput placeholder="Contact Number" formControlName="phone">
+                    <mat-error *ngIf="userForm.get('phone').touched">
+                        <span *ngIf="userForm.get('phone')?.errors?.required">Contact Number is required.</span>
+                        <span *ngIf="userForm.get('phone')?.errors?.minlength || userForm.get('phone')?.errors?.minlength">touched Contact Number.</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Role</mat-label>
+                    <mat-select formControlName="role">
+                        <mat-option value="">Select</mat-option>
+                        <mat-option *ngFor="let role of rolesList" [value]="role.role">{{role.role}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="userForm.get('role').touched && userForm.get('role')?.errors?.required">
+                        Role is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>DOJ</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="doj">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error *ngIf="userForm.get('doj').touched && userForm.get('doj')?.errors?.required">
+                        Date of Joining is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Address </mat-label>
+                    <textarea matInput placeholder="Address" formControlName="address"></textarea>
+                    <mat-error *ngIf="userForm.get('address').touched && userForm.get('address')?.errors?.required">
+                        Address is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>City </mat-label>
+                    <input matInput placeholder="City" formControlName="city">
+                    <mat-error *ngIf="userForm.get('city').touched && userForm.get('city')?.errors?.required">
+                        City is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div fxFlex="100" class="cols">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="Zip Code" formControlName="zip">
+                    <mat-error *ngIf="userForm.get('zip').touched && userForm.get('zip')?.errors?.required">
+                        Zip Code is required.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+            <div fxFlex="100" class="cols align-right">
+                <button mat-raised-button (click)="onCancel()">Cancel</button>
+                <span class="mr20"></span>
+                <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

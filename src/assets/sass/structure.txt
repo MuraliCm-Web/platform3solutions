@@ -1,0 +1,46 @@
+﻿'sass/
+|
+|– abstracts/
+|   |– _variables.scss    		    # Sass Variables
+|   |– _functions.scss    		    # Sass Functions
+|   |– _mixins.scss       		    # Sass Mixins
+|   |– _placeholders.scss 		    # Sass Placeholders
+|   |– _media.scss 				    # Sass mixins for Media Querys
+|   |– themes/
+|	    |-_theme1.scss			    #Themes For Variables Continues Here
+|	    .
+|	    .
+|	    .
+|	    |-_theme8.scss
+|
+|– base/
+|   |– _base.scss				    #Base Styles
+|   |– _reset.scss        		    #Reset/normalize
+|   |– _typography.scss   		    #Typography rules
+|
+|– components/
+|	|-kendo/
+|	   |-kendo.scss				    #Imports of Kendo components
+|		|-_kendo-forms.scss		    #Kendo Form Field Overrides
+|		|-_kendo-grid.scss		    #Kendo Grid Overrides
+|		|-_kendo-tree.scss		    #Kendo Tree Overrides
+|		|-_kendo-icons.scss		    #Kendo Icons Overrides
+|      |–_image.scss      		    #Common Project Image styles
+|
+|– layout/
+|   |– home.scss   		  		    # Home Layout Styles
+|
+|– pages/
+|   |– module.scss         			# Imports of all modules
+|   	|– app_common.scss      		# Applications Common styles
+|   	|– common_structure.scss    	# Common Structure Styles
+|
+|
+|– themes/
+|   |– _theme1.scss                 # Temporarly Theme Continues Here
+|
+|– vendors/
+|   …                               # This Directory will have Third party sass files.
+|   |– kendo/                       # Temporarly Theme Continues Here
+|
+|– style.scss                        # Main Sass file - Imports of all sass

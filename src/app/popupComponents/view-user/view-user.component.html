@@ -1,0 +1,60 @@
+<div class="viewUserPopup">
+    <div class="popup-title">View User</div>
+    <div fxLayout="row">
+        <div fxFlex="100">
+            <label>Name</label>
+        <div class="value" >{{data.name}}</div>
+        </div>
+        <div fxFlex="100">
+            <label>Gender</label> 
+            <div class="value">{{data.gender}}</div></div>
+    </div>
+        <div fxLayout="row"  fxLayout.xs="column" class="form-page marginT">
+    <div fxFlex="100">
+        <label>EMP ID</label>
+        <div class="value">{{data.empId}}</div>
+    </div>
+
+<div fxFlex="100">
+    <label>Email</label>
+    <div class="value">{{data.email}}</div>
+</div>
+</div>
+<div fxLayout="row"  fxLayout.xs="column" class="form-page marginT">
+    <div fxFlex="100">
+        <label>Role</label>
+        <div class="value">{{data.role}}</div>
+    </div>
+    <div fxFlex="100">
+        <label>Contact Number</label>
+        <div class="value">{{data.phone}}</div>
+    </div>
+    
+</div>
+<div fxLayout="row"  fxLayout.xs="column" class="form-page marginT">
+    <div fxFlex="100">
+        <label>Address</label>
+        <div class="value">{{data.address}}</div>
+    </div>
+</div>
+<div fxLayout="row"  fxLayout.xs="row" class="form-page marginT">
+    <div fxFlex="100">
+        <label>City</label>
+        <div class="value">{{data.city}}</div>    
+</div>
+    <div fxFlex="100">
+        <label>ZipCode</label>
+        <div class="value">{{data.zip}}</div>
+    </div>
+</div>
+
+
+<div fxLayout="row" fxLayout.xs="column" class="form-page marginT">
+    <div fxFlex="100" class="cols align-right">
+        <span class="mr20">
+            <button mat-raised-button (click)="closePopup()">Cancel</button>
+        </span>
+       
+    </div>
+</div>
+</div>

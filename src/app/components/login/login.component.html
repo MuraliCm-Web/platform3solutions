@@ -1,0 +1,42 @@
+<div class="blue-bg">
+    <div>
+    <div class="logo-bg">UM</div>
+<div class="login-container">
+    <div class="title">Login</div>
+<div fxLayout="column" [formGroup]="loginForm">
+    <div fxFlex="100">
+        <mat-form-field class="example-full-width">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="username" value="">
+        <mat-error *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
+            Username is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100">
+        <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+            Password is required.
+        </mat-error>
+    </mat-form-field>
+    </div>
+
+    <div fxFlex="100" class="align-center">
+        <button mat-raised-button color="primary" class="w100" (click)="login()">Login</button>
+    </div>
+    <div fxLayout="column" class="form-page marginT">
+        <div fxFlex="100">
+            <a [routerLink]="['/routePath']" routerLinkActive="router-link-active"  class="blue-link">Forgot Pssword</a><br>
+            <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" class="blue-link"> New User</a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+  

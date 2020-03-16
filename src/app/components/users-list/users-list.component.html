@@ -1,0 +1,82 @@
+<div class="page">
+    <div class="page-header">
+        <div fxLayout="row" fxLayout.xs="column">
+            <div fxFlex="54" class="cols">
+                User Details
+            </div>
+            <div fxFlex="35" class="cols align-right position-relative">
+                <button mat-stroked-button color="primary" (click)="showFilfer()">
+                  <mat-icon>filter_list</mat-icon>
+                </button>
+                <div class="filterDiv">
+                    <mat-form-field *ngIf="isFilterShow">
+                        <mat-label>Filter</mat-label>
+                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxFlex="11" class="cols align-right">
+                <button mat-stroked-button color="primary" (click)="addEditUser()">ADD USER</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mat-elevation-z8 userTable">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <ng-container matColumnDef="id">
+                <th id="id" mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th id="email" mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <th id="phone" mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+                <td mat-cell *matCellDef="let row"> {{row.phone}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="role">
+                <th id="role" mat-header-cell *matHeaderCellDef mat-sort-header> Role </th>
+                <td mat-cell *matCellDef="let row"> {{row.role}} </td>
+            </ng-container>
+            <ng-container matColumnDef="menu" stickyEnd>
+                <th id="menu" mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-button [matMenuTriggerFor]="userListControl"><i class="material-icons">
+                        drag_indicator
+                        </i></button>
+<mat-menu #userListControl="matMenu">
+    <button mat-menu-item (click)="viewUser(element)"><i class="material-icons" title="View">
+        visibility
+        </i> View</button>
+        <button mat-menu-item (click)="roleChange(element)"><i class="material-icons" title="Role Change">
+            how_to_reg
+            </i> Role Change</button>
+        <button mat-menu-item (click)="addEditUser(element)"><i class="material-icons" title="Edit">
+            create
+            </i> Edit</button>
+        <button mat-menu-item (click)="deleteUser(element)"><i class="material-icons" title="Delete User">
+            delete_sweep
+            </i>Delete User</button>
+</mat-menu>
+                   
+                   
+                    
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+            </tr>
+        </table>
+    </div>
+</div>
