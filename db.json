@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "empId": "2365",
+      "name": "Murali ",
+      "email": "sreecmcm@gmail.com",
+      "phone": "9840805710",
+      "gender": "Male",
+      "role": "Lead Engineer",
+      "doj": "2020-03-11T18:30:00.000Z",
+      "address": "C/o SAGAR NARALE, R.No-509, SR-17/5/1\nSAMBRAMIN",
+      "city": "RAHATANI, PUNA",
+      "zip": "411017"
+    },
+    {
+      "id": 2,
+      "empId": "56",
+      "name": "Ashok ",
+      "email": "ashok@gmail.com",
+      "phone": "9658785462",
+      "gender": "Male",
+      "role": "Junior Designer",
+      "doj": "2020-03-17T18:30:00.000Z",
+      "address": "will update",
+      "city": "Chennai",
+      "zip": "600070"
+    },
+    {
+      "id": 3,
+      "empId": "85",
+      "name": "Arul",
+      "email": "Arul@gmail.com",
+      "phone": "8564879563",
+      "gender": "Male",
+      "role": "Developer",
+      "doj": "2021-07-14T18:30:00.000Z",
+      "address": "will update",
+      "city": "Trichy",
+      "zip": "56851"
+    }
+  ],
+  "roles": [
+    {
+      "id": 2,
+      "role": "Junior Designer",
+      "description": "Junior Designer"
+    },
+    {
+      "id": 3,
+      "role": "Developer",
+      "description": "asdasdas"
+    },
+    {
+      "id": 4,
+      "role": "Lead Engineer",
+      "description": null
+    }
+  ]
+}
