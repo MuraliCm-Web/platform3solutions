@@ -13,16 +13,16 @@ export class AppComponent implements OnDestroy {
   private userObs: Subscription;
   public user;
 
-  navMenu: Array<any> = [
-    {
-      item: 'User Details',
-      path: 'usersList'
-    },
-    {
-      item: 'Roles',
-      path: 'userRols'
-    }
-  ];
+  // navMenu: Array<any> = [
+  //   {
+  //     item: 'User Details',
+  //     path: 'usersList'
+  //   },
+  //   {
+  //     item: 'Roles',
+  //     path: 'userRols'
+  //   }
+  // ];
 
   constructor(
     private appService: AppService
@@ -35,9 +35,11 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.userObs.unsubscribe();
+  
   }
 
   logout() {
     this.appService.logout();
   }
 }
+

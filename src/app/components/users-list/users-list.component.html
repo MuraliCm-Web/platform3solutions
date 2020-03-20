@@ -1,28 +1,27 @@
 <div class="page">
-    <div class="page-header">
-        <div fxLayout="row" fxLayout.xs="column">
-            <div fxFlex="54" class="cols">
-                User Details
-            </div>
-            <div fxFlex="35" class="cols align-right position-relative">
-                <button mat-stroked-button color="primary" (click)="showFilfer()">
-                  <mat-icon>filter_list</mat-icon>
-                </button>
-                <div class="filterDiv">
-                    <mat-form-field *ngIf="isFilterShow">
-                        <mat-label>Filter</mat-label>
-                        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
-                    </mat-form-field>
-                </div>
-            </div>
-            <div fxFlex="11" class="cols align-right">
-                <button mat-stroked-button color="primary" (click)="addEditUser()">ADD USER</button>
-            </div>
-        </div>
+   
 
-    </div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>  User Details</span>
+            <span class="app-spacer"></span>
+            <div class="app-button-row position-relative">
+            <button mat-raised-button (click)="showFilfer()">
+                <mat-icon>filter_list</mat-icon>
+              </button>
+             
+            <button mat-raised-button (click)="addEditUser()">ADD USER</button>
+        </div>
+          </mat-toolbar-row>
+    </mat-toolbar>
 
     <div class="mat-elevation-z8 userTable">
+        <div class="filterDiv"  *ngIf="isFilterShow">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia">
+            </mat-form-field>
+        </div>
         <table mat-table [dataSource]="dataSource" matSort>
 
             <ng-container matColumnDef="id">
@@ -32,7 +31,7 @@
 
             <ng-container matColumnDef="name">
                 <th id="name" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-                <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                <td mat-cell *matCellDef="let row" > {{row.name}} </td>
             </ng-container>
 
             <ng-container matColumnDef="email">

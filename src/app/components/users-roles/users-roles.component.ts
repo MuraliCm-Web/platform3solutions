@@ -12,6 +12,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UsersRolesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'role', 'description', 'menu'];
   dataSource = [];
+  userObs: any;
+  user: any;
   constructor(
     public dialog: MatDialog,
     private appService: AppService,
@@ -19,6 +21,10 @@ export class UsersRolesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.userObs = this.appService.userSub.subscribe(user => {
+      this.user = user;
+      console.log(user);
+    });
     this.getRoles();
   }
 

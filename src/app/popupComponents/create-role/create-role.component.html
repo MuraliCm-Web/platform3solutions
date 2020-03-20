@@ -1,7 +1,8 @@
 <div class="addRolePopup">
-    <div class="popup-title">{{roleForm?.value?.id ? 'Edit' : 'Add'}} Role</div>
-    <div fxLayout="column" [formGroup]="roleForm">
-        <div fxFlex="100">
+    <mat-toolbar color="primary">{{roleForm?.value?.id ? 'Edit' : 'Add'}} Role</mat-toolbar>
+    <!-- <div class="popup-title"></div> -->
+    <div fxLayout="column " [formGroup]="roleForm">
+        <div fxFlex="100" class="mt20">
             <mat-form-field class="example-full-width">
                 <mat-label>Role</mat-label>
                 <input matInput placeholder="Role" formControlName="role">

@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container" color="primary">
+  <mat-sidenav #drawer   class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+      <div class="logo-small">UM</div>
+    <mat-nav-list color="primary">
+      <a mat-list-item  color="primary" [routerLink]="menu.path" routerLinkActive="router-link-active" *ngFor="let menu of navMenu">{{menu.item}}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>User Management</span>
+      <span class="example-spacer"></span>
+      <div class="user" style="background-image:url('assets/images/Rectangle1606.png');" [matMenuTriggerFor]="userControll">
+        <mat-menu #userControll="matMenu">
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item (click)="logout()">LogOut</button>
+        </mat-menu>
+    </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

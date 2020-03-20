@@ -11,25 +11,22 @@ export class AppService {
 
   userSub: Subject<any> = new Subject<any>();
 
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   login(data) {
-    localStorage.setItem('user', JSON.stringify(data));
+    sessionStorage.setItem('user', JSON.stringify(data));
     this.userSub.next(data);
     this.router.navigate(['/usersList']);
   }
 
   logout() {
-    localStorage.removeItem('user');
+    sessionStorage.removeItem('user');
     this.userSub.next(null);
     this.router.navigate(['/login']);
   }
 
   getLoggedInUser() {
-    const user = localStorage.getItem('user');
+    const user = sessionStorage.getItem('user');
     this.userSub.next(user);
   }
 
@@ -38,11 +35,12 @@ export class AppService {
   }
 
   deleteUser(data) {
-    return this.http.delete(environment.usersEndPoint + '/' + data.id);
+    return this.http.delete(environment.usersEndPoint + data.id);
   }
 
   getUser(id?) {
     return this.http.get(environment.usersEndPoint + (id ? id : ''));
+    
   }
 
   createUpdateRole(data) {

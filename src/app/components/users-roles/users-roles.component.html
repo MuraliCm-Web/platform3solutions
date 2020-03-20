@@ -1,15 +1,15 @@
 <div class="page">
-    <div class="page-header">
-        <div fxLayout="row" fxLayout.xs="column">
-            <div fxFlex="54" class="cols">
-                Roles
-            </div>
-            <div fxFlex="100" class="cols align-right">
-                <button mat-stroked-button color="primary" (click)="addEditRole()">ADD ROLE</button>
-            </div>
-        </div>
+ 
 
-    </div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span> Roles</span>
+            <span class="app-spacer"></span>
+           
+            <button mat-raised-button (click)="addEditRole()">ADD ROLE</button>
+      
+          </mat-toolbar-row>
+    </mat-toolbar>
     <div class="mat-elevation-z8 userTable">
         <table mat-table [dataSource]="dataSource" matSort>
 

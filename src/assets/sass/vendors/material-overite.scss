@@ -27,7 +27,7 @@ mat-label {
   width: 200px;
   height: 100vh;
   box-shadow: 0 3px 6px rgba($black, 0.1);
-  background-color: $primary-color !important;
+  background:$A50;
 }
 .sidenav-content {
   height: 100%;
@@ -72,7 +72,7 @@ mat-label {
 }
 .userTable {
   margin-top: 10px;
-  height: calc(100vh - 150px);
+  max-height: calc(100vh - 150px);
   overflow-y: auto;
   table {
     width: 100%;
@@ -89,7 +89,7 @@ mat-label {
 .material-icons {
   font-size: 20px;
   font-weight: bold;
-  color: $font-primary;
+  
 }
 button {
   &.mat-menu-item {
@@ -99,4 +99,25 @@ button {
       margin-right:10px;
     }
   }
+}
+.app-spacer {
+  flex: 1 1 auto;
+}
+.app-button-row button,
+.app-button-row a {
+  margin-right: 8px;
+}
+mat-nav-list{
+  .mat-list-item{
+    &:hover{
+      background-color:$black !important;
+color: $white !important;
+    }
+    
+  }
+  .router-link-active{
+    background-color:$black;
+  color: $white !important;
+  }
+
 }

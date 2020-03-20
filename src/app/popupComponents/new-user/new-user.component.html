@@ -1,8 +1,8 @@
 <div class="newUserPopup">
-    <div class="popup-title">{{userForm?.value?.id ? 'Edit' : 'Add'}} User</div>
+    <mat-toolbar color="primary">{{userForm?.value?.id ? 'Edit' : 'Add'}} User</mat-toolbar>
     <div [formGroup]="userForm">
         <div fxLayout="row" fxLayout.xs="column" class="form-page">
-            <div fxFlex="50" class="cols">
+            <div fxFlex="50" class="cols mt20">
                 <mat-form-field appearance="legacy">
                     <mat-label>Name</mat-label>
                     <input matInput placeholder="Name" formControlName="name">
@@ -11,14 +11,14 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div fxFlex="20" class="cols">
+            <div fxFlex="20" class="cols mt20">
                 <mat-label>Gender</mat-label><br>
                 <mat-radio-group formControlName="gender">
                     <mat-radio-button value="Male" color="primary">Male</mat-radio-button>
                     <mat-radio-button value="Female" color="primary">Female</mat-radio-button>
                 </mat-radio-group>
             </div>
-            <div fxFlex="30" class="cols">
+            <div fxFlex="30" class="cols mt20">
                 <mat-form-field appearance="legacy">
                     <mat-label>Emp. ID</mat-label>
                     <input matInput placeholder="Emp. ID" formControlName="empId">

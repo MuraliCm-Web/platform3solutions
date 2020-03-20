@@ -1,7 +1,8 @@
 <div class="roleChangePopup" [formGroup]="userForm">
-    <div class="popup-title">Change Roll</div>
+    <mat-toolbar color="primary">Change Roll</mat-toolbar>
+   
     <div fxLayout="column">
-        <div fxFlex="100">
+        <div fxFlex="100" class="mt20">
             <mat-form-field class="example-full-width">
                 <mat-label>User Name</mat-label>
                 <input matInput placeholder="User name" readonly formControlName="name">
